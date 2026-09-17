@@ -1,939 +1,261 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CMarie PR | Public Relations</title>
-  <meta name="description" content="CMarie PR is a boutique public relations agency specializing in fashion, entertainment, beauty, and wellness." />
-
-  <style>
-    :root{
-      --bg: #ffffff;
-      --paper: #fbfaf8;
-      --ink: #111111;
-      --muted: #6b6b6b;
-      --line: #e8e6e1;
-
-      --green: #26322B;
-      --gold:  #b79a6a;
-      --greenWash: rgba(38,50,43,.05);
-
-      --shadow: 0 18px 40px rgba(0,0,0,.08);
-      --shadowSoft: 0 10px 28px rgba(0,0,0,.08);
-
-      --max: 1100px;
-      --radius: 18px;
-    }
-
-    *{ box-sizing: border-box; }
-    html{ scroll-behavior: smooth; }
-    body{
-      margin: 0;
-      color: var(--ink);
-      background: var(--bg);
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      line-height: 1.6;
-      letter-spacing: .2px;
-    }
-
-    .display{
-      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
-      font-weight: 520;
-      letter-spacing: .2px;
-      line-height: 1.05;
-      color: var(--ink);
-    }
-    .display .accent-word{ color: var(--green); }
-    h1,h2,h3{ margin: 0 0 12px; }
-    p{ margin: 0 0 14px; color: var(--muted); }
-    a{ color: inherit; text-decoration: none; }
-    .small{ font-size: 12.5px; color: var(--muted); letter-spacing: .18em; text-transform: uppercase; }
-    .kicker{ font-size: 12px; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); }
-
-    .section-title{
-      position: relative;
-      display: inline-block;
-    }
-    .section-title::after{
-      content:"";
-      position:absolute;
-      left:0;
-      bottom:-10px;
-      width:40px;
-      height:2px;
-      background: var(--gold);
-      border-radius: 2px;
-    }
-
-    .container{
-      width: min(var(--max), calc(100% - 40px));
-      margin-inline: auto;
-    }
-    section{ padding: 84px 0; }
-    .divider{ border-top: 1px solid var(--line); }
-
-    /* Nav */
-    .nav{
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: rgba(255,255,255,.86);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(232,230,225,.7);
-    }
-    .nav-inner{
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      padding: 16px 0;
-    }
-    .brand{
-      display: flex;
-      align-items: baseline;
-      gap: 10px;
-      min-width: 180px;
-    }
-    .brand-mark{
-      width: 34px;
-      height: 34px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      display: grid;
-      place-items: center;
-      font-family: ui-serif, Georgia, serif;
-      font-weight: 650;
-      letter-spacing: .06em;
-      background: linear-gradient(180deg, rgba(38,50,43,.06), rgba(255,255,255,0));
-      position: relative;
-      overflow: hidden;
-    }
-    .brand-mark::after{
-      content:"";
-      position:absolute;
-      inset:-8px auto auto -18px;
-      width: 46px;
-      height: 46px;
-      background: radial-gradient(circle at 60% 40%, rgba(183,154,106,.35), transparent 55%);
-      transform: rotate(20deg);
-      pointer-events:none;
-    }
-    .brand-name{
-      font-size: 14px;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: var(--ink);
-    }
-    .brand-sub{
-      font-size: 11px;
-      color: var(--muted);
-      letter-spacing: .22em;
-      text-transform: uppercase;
-    }
-
-    .menu{
-      display: flex;
-      align-items: center;
-      gap: 22px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-    .menu a{
-      font-size: 12px;
-      letter-spacing: .22em;
-      text-transform: uppercase;
-      color: var(--muted);
-      padding: 10px 6px;
-      border-radius: 10px;
-      position: relative;
-      transition: color .2s ease;
-    }
-    .menu a::after{
-      content:"";
-      display:block;
-      height: 1px;
-      width: 0;
-      background: var(--gold);
-      transition: width .25s ease;
-      margin-top: 6px;
-      border-radius: 2px;
-    }
-    .menu a:hover{ color: var(--green); }
-    .menu a:hover::after{ width: 100%; }
-
-    .cta{
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 12px 16px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      font-size: 12px;
-      letter-spacing: .22em;
-      text-transform: uppercase;
-      color: var(--ink);
-      background: #fff;
-      transition: transform .15s ease, box-shadow .2s ease, border-color .2s ease;
-      white-space: nowrap;
-    }
-    .cta:hover{
-      transform: translateY(-1px);
-      border-color: rgba(38,50,43,.35);
-      box-shadow: var(--shadowSoft);
-    }
-    .cta .dot{
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: var(--gold);
-      box-shadow: 0 0 0 4px rgba(183,154,106,.18);
-    }
-
-    /* Hero */
-    .hero{
-      padding: 64px 0 36px;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::before{
-      content:"";
-      position:absolute;
-      inset:-200px -200px auto -200px;
-      height: 540px;
-      background:
-        radial-gradient(700px 380px at 20% 15%, rgba(38,50,43,.10), transparent 62%),
-        radial-gradient(700px 380px at 80% 20%, rgba(183,154,106,.18), transparent 60%);
-      pointer-events:none;
-      z-index:0;
-    }
-    .hero > .container{ position: relative; z-index: 1; }
-
-    .hero-grid{
-      display: grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 30px;
-      align-items: end;
-    }
-    .hero h1{ font-size: clamp(38px, 5vw, 64px); }
-    .tagline{
-      font-size: 16px;
-      color: var(--muted);
-      max-width: 56ch;
-      margin-top: 14px;
-    }
-    .hero-actions{
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 26px;
-    }
-
-    /* Buttons */
-    .btn{
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 14px 18px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      font-size: 12px;
-      letter-spacing: .22em;
-      text-transform: uppercase;
-      background: #fff;
-      transition: transform .15s ease, box-shadow .2s ease, border-color .2s ease;
-      cursor: pointer;
-    }
-    .btn.primary{
-      background: var(--green);
-      color: #fff;
-      border-color: var(--green);
-    }
-    .btn.primary:hover{
-      transform: translateY(-1px);
-      box-shadow: 0 14px 36px rgba(0,0,0,.18);
-      border-color: var(--green);
-    }
-    .btn.gold{
-      background: transparent;
-      color: var(--ink);
-      border: 1px solid rgba(183,154,106,.65);
-    }
-    .btn.gold:hover{
-      background: var(--gold);
-      color: #fff;
-      border-color: var(--gold);
-      box-shadow: var(--shadowSoft);
-      transform: translateY(-1px);
-    }
-    .btn.full{ width: 100%; padding: 16px 18px; }
-
-    /* Two-column */
-    .two-col{
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 44px;
-      align-items: start;
-    }
-
-    /* Cards */
-    .card{
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 22px;
-      background: #fff;
-      box-shadow: 0 1px 0 rgba(0,0,0,.02);
-    }
-    .card.soft{ background: var(--paper); }
-    .card.tint{
-      background: linear-gradient(180deg, var(--greenWash), rgba(255,255,255,0));
-      border-color: rgba(38,50,43,.18);
-    }
-
-    .pill-row{
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 14px;
-    }
-    .pill{
-      padding: 8px 12px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      font-size: 11px;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: var(--muted);
-      background: #fff;
-    }
-    .pill.gold{
-      border-color: rgba(183,154,106,.55);
-      background: linear-gradient(180deg, rgba(183,154,106,.14), rgba(255,255,255,0));
-      color: rgba(17,17,17,.78);
-    }
-    .note{
-      margin-top: 12px;
-      font-size: 13px;
-      color: var(--muted);
-    }
-    .note strong{ color: var(--ink); font-weight: 650; }
-
-    /* Capabilities */
-    .caps-head{
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 18px;
-      margin-bottom: 20px;
-    }
-    .caps-grid{
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-      margin-top: 24px;
-    }
-    .caps-grid .cap:nth-child(3){
-      grid-column: 1 / span 2;
-      max-width: 520px;
-      justify-self: center;
-    }
-    .cap{
-      border-radius: 22px;
-      border: 1px solid rgba(38,50,43,.22);
-      background: linear-gradient(180deg, rgba(38,50,43,.08), rgba(255,255,255,0));
-      padding: 22px;
-    }
-    .cap h3{
-      font-family: ui-serif, Georgia, serif;
-      font-weight: 650;
-      color: var(--ink);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 10px;
-    }
-    .cap h3 .icon{
-      width: 18px;
-      height: 18px;
-      border-radius: 999px;
-      border: 1px solid rgba(38,50,43,.55);
-      background: rgba(38,50,43,.12);
-      display: inline-block;
-      position: relative;
-    }
-    .cap h3 .icon::after{
-      content: "";
-      position: absolute;
-      inset: 4px;
-      border-radius: 999px;
-      border: 1px solid rgba(183,154,106,.6);
-      background: rgba(183,154,106,.18);
-    }
-
-    ul.clean{
-      margin: 0;
-      padding-left: 18px;
-      color: var(--muted);
-    }
-    ul.clean li{ margin: 8px 0; }
-
-
-    .approach-grid{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:18px;
-      margin-top:24px;
-    }
-    .approach-step{
-      border-radius:22px;
-      border:1px solid rgba(38,50,43,.22);
-      background: linear-gradient(180deg, rgba(38,50,43,.08), rgba(255,255,255,0));
-      padding:22px;
-    }
-    .approach-step .phase{
-      font-size:12px;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      color:var(--muted);
-      margin-bottom:8px;
-    }
-
-    /* Press (As Seen In) */
-    .press-strip{
-      margin-top: 26px;
-      display: grid;
-      grid-auto-flow: column;
-      grid-auto-columns: minmax(250px, 320px);
-      gap: 14px;
-
-      overflow-x: auto;
-      padding: 10px 4px 16px;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-
-      mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
-    }
-    .press-strip::-webkit-scrollbar{ height: 10px; }
-    .press-strip::-webkit-scrollbar-track{ background: transparent; }
-    .press-strip::-webkit-scrollbar-thumb{
-      background: rgba(183,154,106,.35);
-      border-radius: 999px;
-      border: 2px solid rgba(255,255,255,.75);
-    }
-
-    .press-item{
-      scroll-snap-align: start;
-      border: 1px solid rgba(183,154,106,.25);
-      border-radius: 18px;
-      background: #fff;
-      overflow: hidden;
-      display: grid;
-      gap: 10px;
-      padding: 12px;
-      transition: transform .15s ease, box-shadow .2s ease, border-color .2s ease;
-    }
-    .press-item:hover{
-      transform: translateY(-2px);
-      border-color: rgba(183,154,106,.45);
-      box-shadow: 0 12px 28px rgba(0,0,0,.10);
-    }
-    .press-thumb-img{
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 14px;
-      border: 1px solid var(--line);
-    }
-    .press-meta{
-      font-size: 11px;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: var(--muted);
-      padding: 0 2px 2px;
-    }
-
-    /* Contact */
-    .contact-wrap{
-      background: var(--greenWash);
-      border-top: 1px solid var(--line);
-      padding-top: 74px;
-    }
-    .contact-card{
-      border: 1px solid rgba(183,154,106,.35);
-      border-radius: 26px;
-      padding: 26px;
-      background: #fff;
-      box-shadow: var(--shadow);
-      display: grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 18px;
-      align-items: start;
-    }
-    form{
-      display: grid;
-      gap: 12px;
-      margin-top: 14px;
-    }
-    label{ font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); }
-    input, textarea{
-      width: 100%;
-      padding: 14px 14px;
-      border-radius: 14px;
-      border: 1px solid var(--line);
-      background: #fff;
-      outline: none;
-      font: inherit;
-    }
-    input:focus, textarea:focus{
-      border-color: rgba(183,154,106,.6);
-      box-shadow: 0 0 0 4px rgba(183,154,106,.14);
-    }
-    textarea{ min-height: 120px; resize: vertical; }
-
-    .contact-side{
-      border-left: 1px solid var(--line);
-      padding-left: 18px;
-    }
-    .contact-side .line{
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 0;
-      color: var(--muted);
-    }
-    .icon-btn{
-      width: 40px;
-      height: 40px;
-      border-radius: 999px;
-      border: 1px solid rgba(183,154,106,.30);
-      display: grid;
-      place-items: center;
-      background: linear-gradient(180deg, rgba(183,154,106,.12), rgba(255,255,255,0));
-    }
-
-    footer{
-      padding: 34px 0 44px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-    .footer-inner{
-      display:flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      border-top: 1px solid rgba(183,154,106,.25);
-      padding-top: 22px;
-    }
-
-    @media (max-width: 920px){
-      section{ padding: 70px 0; }
-      .hero-grid{ grid-template-columns: 1fr; }
-      .two-col{ grid-template-columns: 1fr; }
-      .caps-grid{ grid-template-columns: 1fr; }
-      .approach-grid{ grid-template-columns: 1fr; }
-      .contact-card{ grid-template-columns: 1fr; }
-      .contact-side{
-        border-left: 0;
-        padding-left: 0;
-        border-top: 1px solid var(--line);
-        padding-top: 16px;
-      }
-      .press-strip{ mask-image: none; }
-    }
-    @media (max-width: 520px){
-      .brand{ min-width: unset; }
-      .menu{ gap: 10px; }
-      .menu a{ padding: 8px 6px; }
-    }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173b2c">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <title>CMarie PR | Beauty, Fashion, Wellness & Lifestyle PR</title>
+  <meta name="description" content="CMarie PR is a boutique public relations agency helping beauty, fashion, wellness and lifestyle brands build meaningful visibility through earned media, influencer marketing, product gifting and experiential activations.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%2326312b'/%3E%3Ctext x='32' y='39' text-anchor='middle' font-family='Georgia' font-size='25' fill='%23f5f0e7'%3ECM%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
 </head>
-
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- NAV -->
-  <header class="nav">
-    <div class="container nav-inner">
-      <a class="brand" href="#home" aria-label="CMarie PR Home">
-        <div class="brand-mark">CM</div>
-        <div>
-          <div class="brand-name">CMarie PR</div>
-          <div class="brand-sub">Public Relations</div>
-        </div>
+  <header class="site-header" data-header>
+    <div class="header-inner">
+      <a class="wordmark" href="#top" aria-label="CMarie PR home">
+        <span class="wordmark-main">CMarie</span>
+        <span class="wordmark-tag">Public Relations</span>
       </a>
 
-      <nav class="menu" aria-label="Primary">
-        <a href="#philosophy">Philosophy</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" data-menu-toggle>
+        <span class="sr-only">Open menu</span>
+        <span></span><span></span>
+      </button>
+
+      <nav class="site-menu" id="site-menu" aria-label="Primary navigation" data-menu>
+        <a href="#services">Services</a>
+        <a href="#work">Selected work</a>
         <a href="#about">About</a>
-        <a href="#capabilities">Capabilities</a>
-        <a href="#press">As Seen In</a>
-        <a href="#contact" class="cta"><span class="dot"></span>Contact</a>
+        <a href="#press">Press</a>
+        <a class="header-cta" href="https://calendly.com/crisantawhite/pr-discovery-call" target="_blank" rel="noopener noreferrer">
+          Book a discovery call <span aria-hidden="true">↗</span>
+        </a>
       </nav>
     </div>
   </header>
 
-  <!-- HERO -->
-  <main id="home" class="hero">
-    <div class="container">
-      <div class="hero-grid">
-        <div>
-          <div class="kicker">Boutique, founder-led public relations</div>
-
-          <h1 class="display">
-            Luxury storytelling with <span class="accent-word">editorial</span> precision.
-          </h1>
-
-          <p class="tagline">
-            CMarie PR helps brands build meaningful visibility through media relationships, strategic storytelling, and experiential activations.
-          </p>
-
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-noise" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Boutique PR for beauty, fashion, wellness &amp; lifestyle</p>
+          <h1>Make your brand<br>part of the<br><em>conversation.</em></h1>
+          <p class="hero-lede">CMarie PR builds visibility for products, founders &amp; cultural brands through earned media, creator partnerships &amp; memorable brand experiences.</p>
           <div class="hero-actions">
-            <a class="btn primary" href="#contact">Start a Conversation</a>
-            <a class="btn gold" href="#capabilities">Explore Capabilities</a>
+            <a class="button button-light" href="https://calendly.com/crisantawhite/pr-discovery-call" target="_blank" rel="noopener noreferrer">Book a discovery call <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="#work">Explore selected work <span aria-hidden="true">↓</span></a>
           </div>
-
-          <p class="note">
-            We focus on media visibility, strategic storytelling, and experiential activations.
-          </p>
+          <div class="hero-proof" aria-label="Experience highlights">
+            <div><strong>10+</strong><span>years of agency PR experience</span></div>
+            <div><strong>40+</strong><span>events &amp; activations</span></div>
+            <div><strong>Founder-led</strong><span>strategy throughout</span></div>
+          </div>
         </div>
 
-        <div class="card tint">
-          <div class="small">Core focus</div>
-          <p style="margin-top:10px">
-            Meaningful visibility, strategic storytelling, and experiential activations delivered with a clean editorial sensibility and precise execution.
-          </p>
-          <div class="pill-row">
-            <span class="pill gold">Fashion</span>
-            <span class="pill">Entertainment</span>
-            <span class="pill">Beauty</span>
-            <span class="pill">Wellness</span>
+        <article class="hero-work reveal" aria-label="The Organic Skin Co. beauty editorial" data-tilt>
+          <div class="work-image work-image-main editorial-main">
+            <img src="assets/work/tosc-hero.webp" alt="The Organic Skin Co. model holding The Good Oil face oil">
+          </div>
+          <div class="work-image work-image-texture editorial-detail" aria-hidden="true">
+            <img src="assets/work/tosc-detail.webp" alt="">
+          </div>
+          <div class="work-stamp" aria-hidden="true">PR • CULTURE • STORY •</div>
+          <div class="work-caption experience-caption">
+            <span>Senior strategy, hands-on execution</span>
+            <strong>10+ years</strong>
+            <small>Shaping stories, launching products &amp; creating moments that earn attention</small>
+          </div>
+        </article>
+      </div>
+
+      <div class="press-ribbon" aria-label="CMarie PR capabilities">
+        <span>Integrated capabilities</span>
+        <div class="ticker" aria-hidden="true">
+          <div class="ticker-track">
+            <b>Earned Media</b><i>✦</i><b>Product Launches</b><i>✦</i><b>Influencer Marketing</b><i>✦</i><b>Product Gifting</b><i>✦</i><b>Experiential Events</b><i>✦</i>
+            <b>Earned Media</b><i>✦</i><b>Product Launches</b><i>✦</i><b>Influencer Marketing</b><i>✦</i><b>Product Gifting</b><i>✦</i><b>Experiential Events</b><i>✦</i>
           </div>
         </div>
       </div>
-    </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="section-intro reveal">
+        <p class="eyebrow dark">Built around the business goal</p>
+        <h2>Visibility that moves<br><em>with intention.</em></h2>
+        <p>Every partnership begins with a clear point of view, then expands across the channels and moments that can move the brand forward.</p>
+      </div>
+
+      <div class="strategy-lab reveal" data-strategy-lab>
+        <div class="lab-controls">
+          <div>
+            <p class="lab-label">Start with the priority</p>
+            <h3>What needs to happen next?</h3>
+          </div>
+          <div class="goal-tabs" role="tablist" aria-label="Choose a PR priority">
+            <button type="button" role="tab" aria-selected="true" aria-controls="strategy-result" data-goal="launch">Launch a product</button>
+            <button type="button" role="tab" aria-selected="false" aria-controls="strategy-result" data-goal="momentum">Build consistent press</button>
+            <button type="button" role="tab" aria-selected="false" aria-controls="strategy-result" data-goal="seeding">Get product into hands</button>
+            <button type="button" role="tab" aria-selected="false" aria-controls="strategy-result" data-goal="event">Create a moment</button>
+          </div>
+        </div>
+
+        <div class="lab-result" id="strategy-result" role="tabpanel" tabindex="0" aria-live="polite">
+          <div>
+            <p class="lab-label">Recommended PR mix</p>
+            <h3 data-result-title>Launch story + targeted discovery</h3>
+            <p data-result-copy>Clarify the product story, build press-ready assets &amp; introduce the launch through highly targeted media and product sampling.</p>
+          </div>
+          <ul data-result-services>
+            <li>Product positioning &amp; launch narrative</li>
+            <li>Editorial media relations</li>
+            <li>Media gifting &amp; follow-through</li>
+          </ul>
+          <a class="mini-cta" href="https://calendly.com/crisantawhite/pr-discovery-call" target="_blank" rel="noopener noreferrer">Talk through your launch <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+
+      <div class="service-grid">
+        <article class="service-card reveal">
+          <span class="service-index">01</span>
+          <h3>Public Relations</h3>
+          <p>From launch moments to always-on press support, we build the stories, materials &amp; relationships that help brands get discovered and stay part of the conversation.</p>
+          <ul><li>PR strategy &amp; brand positioning</li><li>Editorial pitching &amp; media relations</li><li>Product launches &amp; media sampling</li><li>Shopping, affiliate &amp; gift-guide outreach</li></ul>
+        </article>
+        <article class="service-card reveal">
+          <span class="service-index">02</span>
+          <h3>Media Gifting</h3>
+          <p>Thoughtful product seeding that puts the right products in the hands of relevant editors, producers, creators &amp; tastemakers.</p>
+          <ul><li>List strategy &amp; vetting</li><li>Sample coordination</li><li>Personalized outreach</li><li>Follow-up &amp; tracking</li></ul>
+        </article>
+        <article class="service-card reveal">
+          <span class="service-index">03</span>
+          <h3>Influencer Marketing</h3>
+          <p>Creator programs built around fit, purpose &amp; long-term value, from targeted gifting to paid partnerships and brand experiences.</p>
+          <ul><li>Strategy &amp; creator identification</li><li>Gifting or paid campaigns</li><li>Briefing &amp; coordination</li><li>Content tracking &amp; insights</li></ul>
+        </article>
+        <article class="service-card reveal">
+          <span class="service-index">04</span>
+          <h3>Experiential &amp; Events</h3>
+          <p>From focused press previews to larger cultural moments, support can scale from communications strategy to full production through a custom scope.</p>
+          <ul><li>Concept &amp; production partnership</li><li>Media &amp; influencer strategy</li><li>Guest lists &amp; partnerships</li><li>Event publicity &amp; amplification</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="work" id="work">
+      <div class="work-heading reveal">
+        <div>
+          <p class="eyebrow dark">Selected work &amp; experience</p>
+          <h2>Product stories built<br><em>for discovery.</em></h2>
+        </div>
+        <p>A selection of beauty, wellness, fashion &amp; lifestyle work completed through agency consulting partnerships. Each engagement is presented according to the work personally led by Crisanta.</p>
+      </div>
+
+      <div class="portfolio-grid reveal">
+        <article class="portfolio-card">
+          <figure><img src="assets/work/tosc-product.webp" alt="The Organic Skin Co. Dream Cream moisturizer product styling" loading="lazy"></figure>
+          <div class="portfolio-copy">
+            <span>Clean beauty · Agency consulting partnership</span>
+            <h3>The Organic Skin Co.</h3>
+            <p>U.S. visibility through product storytelling, targeted media sampling &amp; mission-led angles including the brand’s One Product One Tree initiative.</p>
+            <small>Selected coverage · NewBeauty · mindbodygreen · EcoCult</small>
+          </div>
+        </article>
+        <article class="portfolio-card">
+          <figure><img src="assets/work/nuda-pour.webp" alt="NUDA beauty product texture" loading="lazy"></figure>
+          <div class="portfolio-copy">
+            <span>Beauty &amp; wellness · Agency consulting partnership</span>
+            <h3>NUDA</h3>
+            <p>Product-focused media relations &amp; sampling around sunless tanning and body-care launches, translating product innovation into timely beauty stories.</p>
+            <small>Selected coverage · Vogue · NewBeauty · Forbes</small>
+          </div>
+        </article>
+        <article class="portfolio-card">
+          <figure><img src="assets/work/grant-stone.webp" alt="Grant Stone footwear product photography" loading="lazy"></figure>
+          <div class="portfolio-copy">
+            <span>Footwear &amp; lifestyle · Agency consulting partnership</span>
+            <h3>Grant Stone</h3>
+            <p>Targeted menswear and product-review outreach designed to put craftsmanship in front of high-intent style audiences.</p>
+            <small>Selected coverage · Dappered · Business Insider · Forbes</small>
+          </div>
+        </article>
+      </div>
+
+      <div class="coverage-wall reveal" id="press">
+        <div class="coverage-head">
+          <div><p class="lab-label">Selected career coverage</p><h3>Stories placed where people pay attention.</h3></div>
+          <div class="coverage-controls">
+            <button type="button" aria-label="Scroll coverage left" data-coverage-prev>←</button>
+            <button type="button" aria-label="Scroll coverage right" data-coverage-next>→</button>
+          </div>
+        </div>
+        <div class="coverage-track" data-coverage-track tabindex="0">
+          <figure><img src="assets/press/Vogue4.webp" alt="Vogue coverage of Vegan Fashion Week" loading="lazy"><figcaption>Vogue · Vegan Fashion Week</figcaption></figure>
+          <figure><img src="assets/press/WWD1.webp" alt="WWD coverage of Vegan Fashion Week" loading="lazy"><figcaption>WWD · Vegan Fashion Week</figcaption></figure>
+          <figure><img src="assets/coveragebook/gq.webp" alt="GQ footwear coverage featuring Grant Stone" loading="lazy"><figcaption>GQ · Grant Stone</figcaption></figure>
+          <figure><img src="assets/coveragebook/forbes.webp" alt="Forbes menswear coverage featuring Grant Stone" loading="lazy"><figcaption>Forbes · Grant Stone</figcaption></figure>
+          <figure><img src="assets/coveragebook/nuda-newbeauty.webp" alt="NewBeauty tanning water coverage featuring NUDA CloudMist" loading="lazy"><figcaption>NewBeauty · NUDA</figcaption></figure>
+          <figure><img src="assets/coveragebook/nuda-vogue.webp" alt="Vogue tanning water coverage featuring NUDA CloudMist" loading="lazy"><figcaption>Vogue · NUDA</figcaption></figure>
+          <figure><img src="assets/coveragebook/mindbodygreen.webp" alt="mindbodygreen skincare coverage" loading="lazy"><figcaption>mindbodygreen · The Organic Skin Co.</figcaption></figure>
+          <figure><img src="assets/press/BET7.webp" alt="BET coverage featuring Debbie Allen Dance Academy" loading="lazy"><figcaption>BET · Debbie Allen Dance Academy</figcaption></figure>
+          <figure><img src="assets/press/TheHollywoodReporter10.webp" alt="The Hollywood Reporter coverage of Vegan Fashion Week" loading="lazy"><figcaption>The Hollywood Reporter · Vegan Fashion Week</figcaption></figure>
+        </div>
+      </div>
+
+      <section class="mission-strip reveal" aria-label="Mission-driven work">
+        <div>
+          <p class="lab-label">Purpose-driven partnerships</p>
+          <h3>Visibility can move culture forward, too.</h3>
+        </div>
+        <div>
+          <p>Alongside consumer brands, CMarie selectively partners with cultural &amp; mission-driven organizations whose work deserves greater visibility and deeper community connection.</p>
+          <p class="mission-names">Debbie Allen Dance Academy <span>✦</span> Brass Tacks</p>
+        </div>
+      </section>
+
+      <section class="founder-section reveal" id="about">
+        <div class="founder-heading">
+          <p class="eyebrow">About CMarie</p>
+          <p class="founder-role">Founder &amp; Managing Director</p>
+          <h2>Meet Crisanta.<br><em>Senior strategy, personally led.</em></h2>
+          <figure class="founder-photo">
+            <img src="assets/work/crisanta-white.webp" alt="Crisanta White, founder and managing director of CMarie PR" loading="lazy">
+          </figure>
+        </div>
+        <div class="founder-copy">
+          <p class="founder-lede">Crisanta White is a senior communications strategist with more than a decade of experience shaping how beauty, fashion, wellness, lifestyle, consumer &amp; cultural brands show up in the world.</p>
+          <p>Across agency leadership, consulting partnerships &amp; CMarie PR engagements, she has guided product launches, ongoing press programs, media sampling, influencer initiatives &amp; more than 40 experiential activations. Her career work has earned attention from outlets including Vogue, WWD, Forbes, GQ, NewBeauty, mindbodygreen, Travel + Leisure &amp; The Hollywood Reporter.</p>
+          <p>Her approach combines editorial instinct with a practical understanding of what makes a product relevant, a founder credible &amp; a brand moment worth talking about.</p>
+          <p>Crisanta founded CMarie PR to give brands direct access to the kind of senior thinking, honest counsel &amp; hands-on follow-through that can get separated from day-to-day execution at larger agencies.</p>
+          <p>Every client works directly with senior strategy from kickoff through execution. Engagements are intentionally scoped around what the brand needs now, with the flexibility to expand across earned media, influence &amp; experiences.</p>
+          <div class="about-pillars" aria-label="CMarie approach">
+            <span>Senior access</span><span>Editorial instinct</span><span>Hands-on execution</span><span>Flexible scale</span>
+          </div>
+          <p class="selected-experience"><span>Founder experience includes work with</span> CAULIPOWER · Dickies Girl · Four Sigmatic · House of CB · NUDA · Oh Polly · The Organic Skin Co. · Grant Stone · Vegan Fashion Week · Walmart</p>
+          <p class="experience-note">Founder experience reflects work completed across prior agency roles, agency consulting partnerships &amp; CMarie PR engagements.</p>
+        </div>
+      </section>
+
+      <section class="contact-band reveal" id="contact">
+        <p class="eyebrow">Work with CMarie</p>
+        <h2>Have a product, launch or moment<br><em>that deserves attention?</em></h2>
+        <p>Let’s build a focused PR plan around where your brand is now &amp; where it wants to go next.</p>
+        <a class="button button-light" href="https://calendly.com/crisantawhite/pr-discovery-call" target="_blank" rel="noopener noreferrer">Book a discovery call <span aria-hidden="true">↗</span></a>
+        <small>Los Angeles, CA</small>
+      </section>
+    </section>
   </main>
 
-  <!-- PHILOSOPHY -->
-  <section id="philosophy" class="divider">
-    <div class="container">
-      <div class="two-col">
-        <div>
-          <div class="kicker">Philosophy</div>
-          <h2 class="display section-title" style="font-size: clamp(28px, 3.2vw, 40px); margin-top: 10px;">
-            We build brands people talk about.
-          </h2>
-          <p style="margin-top: 22px;">
-            The most effective publicity is earned through clarity, intention, and cultural relevance.
-            Our approach is editorial and strategic, pairing elevated storytelling with thoughtful media outreach.
-          </p>
-          <p>
-            Whether launching something new or expanding your footprint, we move with precision, discretion,
-            and a deep understanding of modern media.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="small">What clients can expect</div>
-          <ul class="clean" style="margin-top: 12px;">
-            <li>Founder-led strategy and direct partnership</li>
-            <li>Press-ready narratives and polished messaging</li>
-            <li>Targeted media outreach and relationship-building</li>
-            <li>Influencer and talent placement with clear tracking</li>
-            <li>Clean reporting and next-step recommendations</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about" class="divider">
-    <div class="container">
-      <div class="two-col">
-        <div class="card soft">
-          <div class="kicker">About CMarie PR</div>
-          <h2 class="display section-title" style="font-size: clamp(26px, 3vw, 38px); margin-top: 10px;">
-            Boutique by design. Strategic by nature.
-          </h2>
-          <p style="margin-top: 22px;">
-            CMarie PR is built for brands and talent who want thoughtful, high-touch communications without the
-            stiffness of traditional agency culture. We keep it modern, minimal, and effective.
-          </p>
-          <p>
-            Our background spans fashion, entertainment, beauty, and wellness.
-            We help clients earn visibility and build credibility in a fast-moving media landscape.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="small">At a glance</div>
-          <div style="display:grid; gap: 12px; margin-top: 12px;">
-            <div class="card" style="padding: 14px; border-radius: 16px;">
-              <div style="display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin-bottom:8px;">
-                <div class="display" style="font-size:18px; font-weight:650;">Founder-led</div>
-                <div class="small">Direct access</div>
-              </div>
-              <p style="margin:0;color:var(--muted);">
-                You work with a senior strategist, not passed off to junior staff.
-              </p>
-            </div>
-
-            <div class="card" style="padding: 14px; border-radius: 16px;">
-              <div style="display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin-bottom:8px;">
-                <div class="display" style="font-size:18px; font-weight:650;">Press first</div>
-                <div class="small">Earned media</div>
-              </div>
-              <p style="margin:0;color:var(--muted);">
-                Media relations, visibility strategy, and editorial storytelling.
-              </p>
-            </div>
-
-            <div class="card" style="padding: 14px; border-radius: 16px;">
-              <div style="display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin-bottom:8px;">
-                <div class="display" style="font-size:18px; font-weight:650;">Selective</div>
-                <div class="small">Curated clientele</div>
-              </div>
-              <p style="margin:0;color:var(--muted);">
-                We take on a limited number of clients for high-touch partnership.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CAPABILITIES -->
-  <section id="capabilities" class="divider">
-    <div class="container">
-      <div class="caps-head">
-        <div>
-          <div class="kicker">Capabilities</div>
-          <h2 class="display section-title" style="font-size: clamp(28px, 3.2vw, 40px); margin-top: 10px;">
-            Strategic capabilities designed to build meaningful visibility.
-          </h2>
-          <p style="margin-top: 22px;">CMarie PR supports brands, founders, and cultural organizations through thoughtful storytelling, strategic media visibility, and experiential activations.</p>
-        </div>
-        <a class="btn gold" href="#contact">Inquire</a>
-      </div>
-
-      <div class="caps-grid">
-        <div class="cap">
-          <h3><span class="icon"></span>Media Visibility</h3>
-          <ul class="clean">
-            <li>Media strategy and press office management</li>
-            <li>Editorial pitching and feature placement</li>
-            <li>Press releases and media materials</li>
-            <li>Thought leadership and executive visibility</li>
-            <li>Awards, speaking opportunities, and industry positioning</li>
-          </ul>
-        </div>
-
-        <div class="cap">
-          <h3><span class="icon"></span>Strategic Storytelling</h3>
-          <ul class="clean">
-            <li>Brand narrative and messaging framework</li>
-            <li>Founder voice and brand story development</li>
-            <li>Press-facing positioning and key talking points</li>
-            <li>Brand kit guidance: tone, visuals, and aesthetic direction</li>
-            <li>Launch story angles and editorial alignment</li>
-          </ul>
-        </div>
-
-        <div class="cap">
-          <h3><span class="icon"></span>Experiential Activations</h3>
-          <ul class="clean">
-            <li>Event concept development and experiential strategy</li>
-            <li>Media and influencer strategy for launches and activations</li>
-            <li>Influencer and talent partnerships</li>
-            <li>Press previews, premieres, and invitation strategy</li>
-            <li>Post-event publicity and coverage amplification</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- APPROACH -->
-  <section id="approach" class="divider">
-    <div class="container">
-      <div class="caps-head">
-        <div>
-          <div class="kicker">Our Approach</div>
-          <h2 class="display section-title" style="font-size: clamp(28px, 3.2vw, 40px); margin-top: 10px;">
-            The CMarie Visibility Model.
-          </h2>
-          <p style="margin-top: 22px;">CMarie PR partners with brands and founders through a thoughtful, strategic process designed to build meaningful visibility and long-term media relationships.</p>
-        </div>
-      </div>
-
-      <div class="approach-grid">
-        <div class="approach-step">
-          <div class="phase">Phase 1</div>
-          <h3 class="display" style="font-size: 30px;">Discover</h3>
-          <p>Understanding the brand story and identifying the strongest opportunities for visibility.</p>
-          <ul class="clean">
-            <li>Brand narrative and positioning</li>
-            <li>Media landscape analysis</li>
-            <li>Audience and cultural context</li>
-            <li>Launch and campaign opportunities</li>
-          </ul>
-        </div>
-
-        <div class="approach-step">
-          <div class="phase">Phase 2</div>
-          <h3 class="display" style="font-size: 30px;">Activate</h3>
-          <p>Bringing the story to life through media outreach, partnerships, and cultural moments.</p>
-          <ul class="clean">
-            <li>Media pitching and editorial outreach</li>
-            <li>Influencer and creator partnerships</li>
-            <li>Strategic brand activations and events</li>
-            <li>Campaign and launch publicity</li>
-          </ul>
-        </div>
-
-        <div class="approach-step">
-          <div class="phase">Phase 3</div>
-          <h3 class="display" style="font-size: 30px;">Amplify</h3>
-          <p>Building sustained momentum and deeper industry positioning.</p>
-          <ul class="clean">
-            <li>Coverage amplification and follow-ups</li>
-            <li>Thought leadership opportunities</li>
-            <li>Speaking, awards, and partnerships</li>
-            <li>Continued storytelling and visibility strategy</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRESS -->
-  <section id="press" class="divider">
-    <div class="container">
-      <div class="two-col" style="align-items:end;">
-        <div>
-          <div class="kicker">Press</div>
-          <h2 class="display section-title" style="font-size: clamp(28px, 3.2vw, 40px); margin-top: 10px;">
-            As Seen In
-          </h2>
-        </div>
-      </div>
-
-      <div class="press-strip" aria-label="As Seen In placements (scroll)">
-        <div class="press-item">
-          <img class="press-thumb-img" src="images/press/WWD1.png" alt="WWD placement" loading="lazy">
-          <div class="press-meta">WWD</div>
-        </div>
-
-        <div class="press-item">
-          <img class="press-thumb-img" src="images/press/travelleisure2.png" alt="Travel + Leisure placement" loading="lazy">
-          <div class="press-meta">Travel + Leisure</div>
-        </div>
-
-        <div class="press-item">
-          <img class="press-thumb-img" src="images/press/mindbodygreen3.png" alt="mindbodygreen placement" loading="lazy">
-          <div class="press-meta">mindbodygreen</div>
-        </div>
-
-        <div class="press-item">
-          <img class="press-thumb-img" src="images/press/Vogue4.png" alt="Vogue placement" loading="lazy">
-          <div class="press-meta">Vogue</div>
-        </div>
-
-        <div class="press-item">
-          <img class="press-thumb-img" src="images/press/NewBeauty5.png" alt="NewBeauty placement" loading="lazy">
-          <div class="press-meta">NewBeauty</div>
-        </div>
-
-        <div class="press-item">
-          <img class="press-thumb-img" src="images/press/Forbes6.png" alt="Forbes placement" loading="lazy">
-          <div class="press-meta">Forbes</div>
-        </div>
-
-        <div class="press-item">
-          <img class="press-thumb-img" src="images/press/BET7.png" alt="BET placement" loading="lazy">
-          <div class="press-meta">BET</div>
-        </div>
-
-        <div class="press-item">
-          <img class="press-thumb-img" src="images/press/GQ8.png" alt="GQ placement" loading="lazy">
-          <div class="press-meta">GQ</div>
-        </div>
-
-        <div class="press-item">
-          <img class="press-thumb-img" src="images/press/OK9.png" alt="OK! placement" loading="lazy">
-          <div class="press-meta">OK!</div>
-        </div>
-
-        <div class="press-item">
-          <img class="press-thumb-img" src="images/press/TheHollywoodReporter10.png" alt="The Hollywood Reporter placement" loading="lazy">
-          <div class="press-meta">The Hollywood Reporter</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="contact-wrap">
-    <div class="container">
-      <div class="two-col" style="align-items:end;">
-        <div>
-          <div class="kicker">Contact</div>
-          <h2 class="display section-title" style="font-size: clamp(28px, 3.2vw, 42px); margin-top: 10px;">
-            Let’s build your next chapter of visibility.
-          </h2>
-          <p style="margin-top: 22px;">
-            If you’re interested in working together, please share a few details about your brand or project below.
-          </p>
-        </div>
-      </div>
-
-      <div class="contact-card" style="margin-top: 22px;">
-        <div>
-          <div class="small">Partnership Inquiry</div>
-          <p style="margin-top:10px">
-            Tell us a bit about your brand and goals. If it feels like a strong fit, you’ll be invited to schedule a discovery call.
-          </p>
-          <div style="margin-top:22px; display:grid; gap:12px; max-width:420px;">
-            <a class="btn primary" href="https://calendly.com/crisantawhite/pr-discovery-call" target="_blank" rel="noopener noreferrer">Start a Conversation</a>
-          </div>
-        </div>
-
-        <aside class="contact-side">
-          <div class="small">Details</div>
-
-          <div class="line">
-            <span class="icon-btn" aria-hidden="true">📍</span>
-            <div>
-              <div style="color:var(--ink); font-weight:650;">Los Angeles, CA</div>
-            </div>
-          </div>
-
-          <div class="line">
-            <span class="icon-btn" aria-hidden="true">✉️</span>
-            <div>
-              <div style="color:var(--ink); font-weight:650;">crisanta@cmariepr.com</div>
-            </div>
-          </div>
-
-          <div class="card soft" style="margin-top: 12px;">
-            <div class="small">Office hours</div>
-            <p style="margin-top:10px">
-              Monday to Friday<br />
-              9:00 AM to 6:00 PM PT
-            </p>
-          </div>
-        </aside>
-      </div>
-
-      <footer>
-        <div class="footer-inner">
-          <div>© 2026 CMarie Public Relations. All rights reserved.</div>
-          <div class="small">Modern, minimal, editorial PR</div>
-        </div>
-      </footer>
-    </div>
-  </section>
-
+  <footer>
+    <a class="wordmark footer-wordmark" href="#top" aria-label="Back to top"><span class="wordmark-main">CMarie</span><span class="wordmark-tag">Public Relations</span></a>
+    <p>© <span data-year>2026</span> CMarie Public Relations. All rights reserved.</p>
+    <div class="footer-links"><a href="https://www.instagram.com/CMariePR" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="#top">Back to top ↑</a></div>
+  </footer>
 </body>
 </html>
