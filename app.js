@@ -28,26 +28,26 @@ if (menuToggle && menu) {
 
 const strategyContent = {
   launch: {
-    title: 'Launch story + targeted discovery',
-    copy: 'Clarify the product story, build press-ready assets & introduce the launch through highly targeted media and product sampling.',
-    services: ['Product positioning & launch narrative', 'Editorial media relations', 'Media gifting & follow-through'],
+    title: 'Make the launch worth talking about',
+    copy: 'Whether it’s a new brand, collection, product or campaign, we find the story, shape the rollout & introduce it to the people most likely to care.',
+    services: ['Brand positioning & launch narrative', 'Editorial media relations', 'Creator, stylist or media outreach'],
     cta: 'Talk through your launch'
   },
   momentum: {
-    title: 'Always-on press + strategic relevance',
-    copy: 'Build a steady editorial rhythm around product benefits, seasonal moments, founder perspective & the conversations already moving your category.',
-    services: ['Ongoing media relations', 'Editorial calendar & newsjacking', 'Affiliate-aware product storytelling'],
+    title: 'Stay in the conversation',
+    copy: 'One placement is exciting. Consistent visibility builds recognition. We create a steady rhythm of timely stories that keeps your brand relevant beyond launch day.',
+    services: ['Ongoing media relations', 'Editorial calendar & proactive angles', 'Founder, designer & brand storytelling'],
     cta: 'Build your visibility plan'
   },
   seeding: {
-    title: 'Intentional seeding + relationship building',
-    copy: 'Prioritize fit over volume with tailored lists, personalized outreach & thoughtful follow-up for editors, producers, creators and tastemakers.',
-    services: ['Media & creator list strategy', 'Gifting coordination', 'Tracking, follow-up & insights'],
-    cta: 'Plan a gifting program'
+    title: 'Get in front of the right people',
+    copy: 'The goal isn’t to reach everyone. It’s to reach the editors, creators, stylists, celebrities & tastemakers who can give the brand the right kind of attention.',
+    services: ['Audience & relationship strategy', 'Gifting, seeding or paid partnerships', 'Outreach, coordination & follow-through'],
+    cta: 'Plan your outreach strategy'
   },
   event: {
-    title: 'A physical moment built to travel',
-    copy: 'Shape an experience that works in the room and beyond it, with media, influencer, guest and amplification strategy designed in from the start.',
+    title: 'Make the moment count',
+    copy: 'From intimate press previews to full-scale activations, we help create an experience people want to attend, share & keep talking about.',
     services: ['Concept or production partnership', 'Media & influencer guest strategy', 'Event publicity & post-event amplification'],
     cta: 'Talk through your event'
   }
