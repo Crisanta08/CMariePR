@@ -1,4 +1,4 @@
 User-agent: *
-Disallow: /
+Allow: /
 
-# Private review build. The public CMarie PR site will allow crawling.
+Sitemap: https://www.cmariepr.com/sitemap.xml
